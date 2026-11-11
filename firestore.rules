@@ -2,19 +2,25 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Администратор определяется по email (замените при необходимости)
     function isAdmin() {
       return request.auth != null && request.auth.token.email == 'admin@gmail.com';
     }
-    // Любой прошедший проверку: админ (вход по email) ИЛИ клиент,
-    // подтвердивший номер по SMS (Phone Auth) — в обоих случаях есть request.auth.
     function isVerified() {
       return request.auth != null;
     }
 
-    // Слоты занятости (ячейки по 15 минут). Читать может любой (нужно,
-    // чтобы показать свободное время). Создавать — только проверенный
-    // пользователь (клиент с подтверждённым по SMS номером или админ).
+    // Мастера и услуги: читают все (нужно для сайта и записи),
+    // меняет только администратор в «Настройках».
+    match /masters/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /services/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Слоты занятости по мастеру (slots/{date}_{masterId}_{min}).
     match /slots/{id} {
       allow read:   if true;
       allow create: if isVerified()
@@ -23,19 +29,19 @@ service cloud.firestore {
       allow update, delete: if isAdmin();
     }
 
-    // Записи клиентов. Создать можно только после SMS-подтверждения
-    // номера (request.auth != null). Читать/править/удалять — админ.
+    // Записи. Создать можно только после SMS-подтверждения номера.
+    // Читает администратор — все; клиент — только свои (по uid).
     match /bookings/{id} {
-      allow read, update, delete: if isAdmin();
+      allow read:   if isAdmin()
+                    || (request.auth != null && resource.data.uid == request.auth.uid);
       allow create: if isVerified()
                     && request.resource.data.name  is string
                     && request.resource.data.date  is string
                     && request.resource.data.start is int;
+      allow update, delete: if isAdmin();
     }
 
-    // Лимит записей в день на один номер (limits/{date}_{phone}).
-    // Читать может любой (предпроверка в форме), писать — проверенный
-    // пользователь, удалять (снять лимит при отмене) — админ.
+    // Лимит записей в день на один номер.
     match /limits/{id} {
       allow read:   if true;
       allow create, update: if isVerified()

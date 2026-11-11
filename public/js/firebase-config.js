@@ -36,8 +36,15 @@ window.ATELIER_CONFIG = {
 };
 
 // reCAPTCHA v3 site key для App Check (см. п.9). Пусто/«ВАШ_» — App Check выключен.
+window.APPCHECK_SITE_KEY = "6LfT-BouAAAAAAtBK33vgTXWNC03EBsIXom1Uzrj";
 
 window.firebaseConfig = {
+  apiKey: "AIzaSyAaEHfJAovoffuhn7Bqka777siVk-UZMMc",
+  authDomain: "nails-studio-56965.firebaseapp.com",
+  projectId: "nails-studio-56965",
+  storageBucket: "nails-studio-56965.firebasestorage.app",
+  messagingSenderId: "473994736792",
+  appId: "1:473994736792:web:73316abce921ab8dd88ced",
 };
 
 window.FB = { ready:false, db:null, auth:null, error:null };
