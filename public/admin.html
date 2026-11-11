@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATELIER NÉVE — Кабинет</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f1ec;--cream-2:#f1e7df;--card:#fffdfb;--rose:#c99a86;--rose-2:#d7ad9b;--rose-dark:#b2836d;--rose-soft:#eddbd0;--ink:#3b332d;--ink-soft:#6c6259;--muted:#9c9188;--line:#e8ded4;--white:#fff;--shadow:0 30px 70px -36px rgba(80,58,46,.3);--shadow-sm:0 18px 44px -28px rgba(80,58,46,.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-weight:400;font-size:.92rem;padding:12px 22px;border:1px solid var(--rose);border-radius:10px;background:var(--rose);color:#fff;transition:.3s}
+.btn:hover{background:var(--rose-dark);border-color:var(--rose-dark)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{background:var(--cream-2);color:var(--ink)}
+.btn--danger{background:#c0564a;border-color:#c0564a}
+.btn--danger:hover{background:#a8483d;border-color:#a8483d}
+.btn--sm{padding:9px 16px;font-size:.86rem}
+
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:20px}
+.login__box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:40px;width:min(420px,100%);box-shadow:var(--shadow-sm)}
+.login__box .logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.2em;text-align:center}
+.login__box .sub{text-align:center;color:var(--muted);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin:6px 0 26px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;color:var(--ink-soft);margin-bottom:6px}
+.field input,.field select{width:100%;height:48px;padding:0 15px;border:1px solid var(--line);background:var(--cream);color:var(--ink);font-family:inherit;font-size:.95rem;border-radius:10px;outline:none;transition:border-color .3s,box-shadow .3s}
+.field input:focus,.field select:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,154,134,.14)}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23c99a86' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center}
+.msg{font-size:.84rem;margin-top:10px;min-height:1.1em}
+.msg--err{color:#c0564a}.msg--ok{color:#5a8f6b}
+
+/* app */
+.app{display:none;min-height:100vh;flex-direction:column}
+.app.on{display:flex}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:20}
+.topbar .brand{font-family:'Playfair Display',serif;letter-spacing:.14em;font-size:1.05rem}
+.topbar .brand small{display:block;font-family:'Jost';letter-spacing:.16em;font-size:.6rem;text-transform:uppercase;color:var(--muted);font-weight:400}
+.toolbar{max-width:1200px;width:100%;margin:0 auto;padding:18px 22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.toolbar .range{font-family:'Playfair Display',serif;font-size:1.2rem;margin-right:auto}
+.nav-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;font-size:1.2rem;color:var(--ink)}
+.nav-btn:hover{background:var(--cream-2)}
+
+/* calendar */
+.cal-wrap{max-width:1200px;width:100%;margin:0 auto;padding:0 22px 40px}
+.cal{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cal__head{display:grid;grid-template-columns:62px repeat(7,1fr);border-bottom:1px solid var(--line)}
+.cal__head .corner{border-right:1px solid var(--line)}
+.cal__head .dh{padding:10px 6px;text-align:center;border-right:1px solid var(--line);font-size:.8rem}
+.cal__head .dh:last-child{border-right:none}
+.cal__head .dh b{display:block;font-weight:500;font-size:1.05rem;font-family:'Playfair Display',serif}
+.cal__head .dh.today{background:var(--rose-soft)}
+.cal__head .dh small{color:var(--muted)}
+.cal__body{display:grid;grid-template-columns:62px repeat(7,1fr);position:relative}
+.cal__times{border-right:1px solid var(--line)}
+.cal__times .t{height:60px;position:relative;font-size:.72rem;color:var(--muted);padding:2px 6px}
+.cal__col{position:relative;border-right:1px solid var(--line)}
+.cal__col:last-child{border-right:none}
+.cal__col .hline{height:60px;border-bottom:1px solid var(--line)}
+.cal__col .hline:last-child{border-bottom:none}
+.ev{position:absolute;left:4px;right:4px;background:var(--rose-soft);border:1px solid var(--rose);border-left:3px solid var(--rose-dark);border-radius:8px;padding:6px 8px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;z-index:2}
+.ev:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm);z-index:3}
+.ev b{display:block;font-weight:500;font-size:.82rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev span{font-size:.72rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.empty{max-width:1200px;margin:0 auto;padding:20px 22px;color:var(--muted);font-size:.9rem}
+.hint-bar{max-width:1200px;margin:0 auto;padding:0 22px 10px;color:var(--muted);font-size:.8rem}
+.ev.armed{box-shadow:0 0 0 2px var(--rose-dark),var(--shadow-sm);cursor:grab}
+.ev.dragging{opacity:.85;cursor:grabbing;z-index:50;box-shadow:var(--shadow)}
+.cal__col.drop{background:rgba(201,154,134,.08)}
+.drop-ghost{position:absolute;left:4px;right:4px;border:2px dashed var(--rose-dark);border-radius:8px;background:rgba(201,154,134,.12);z-index:40;pointer-events:none}
+
+/* detail modal */
+.ov{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:18px;opacity:0;visibility:hidden;transition:.3s}
+.ov.on{opacity:1;visibility:visible}
+.ov__bg{position:absolute;inset:0;background:rgba(59,51,45,.5);backdrop-filter:blur(3px)}
+.ov__box{position:relative;background:var(--card);border-radius:18px;padding:30px;width:min(460px,100%);box-shadow:var(--shadow);max-height:92vh;overflow:auto}
+.ov__box h3{font-family:'Playfair Display',serif;font-weight:500;font-size:1.35rem;margin-bottom:4px}
+.ov__box .who{color:var(--muted);font-size:.86rem;margin-bottom:18px}
+.ov__close{position:absolute;right:14px;top:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--white);display:grid;place-items:center}
+.ov__close svg{width:16px;height:16px}
+.ov__row{display:flex;gap:10px;margin-top:8px}
+.ov__actions{display:flex;gap:10px;margin-top:22px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:700px){
+  .cal__head,.cal__body{grid-template-columns:48px repeat(7,minmax(90px,1fr))}
+  .cal{overflow-x:auto}
+  .cal__body,.cal__head{min-width:680px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login" id="login">
+  <div class="login__box">
+    <div class="logo serif">ATELIER&nbsp;NÉVE</div>
+    <div class="sub">Кабинет администратора</div>
+    <form id="loginForm">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="admin@gmail.com" required>
+      </div>
+      <div class="field">
+        <label for="pass">Пароль</label>
+        <input type="password" id="pass" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn" style="width:100%" id="loginBtn">Войти</button>
+      <div class="msg" id="loginMsg"></div>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<div class="app" id="app">
+  <div class="topbar">
+    <div class="brand serif">ATELIER NÉVE<small>Кабинет записей</small></div>
+    <button class="btn btn--ghost btn--sm" id="logout">Выйти</button>
+  </div>
+  <div class="toolbar">
+    <div class="range serif" id="range">—</div>
+    <button class="btn btn--sm" id="addBtn">+ Новая запись</button>
+    <button class="nav-btn" id="prevW" aria-label="Пред. неделя">‹</button>
+    <button class="btn btn--ghost btn--sm" id="todayBtn">Сегодня</button>
+    <button class="nav-btn" id="nextW" aria-label="След. неделя">›</button>
+  </div>
+  <div class="hint-bar">Двойной клик по записи — взять и перетащить на новое время. Одиночный клик — открыть карточку.</div>
+  <div class="cal-wrap">
+    <div class="cal">
+      <div class="cal__head" id="calHead"></div>
+      <div class="cal__body" id="calBody"></div>
+    </div>
+    <div class="empty" id="emptyMsg"></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div class="ov" id="ov" aria-hidden="true">
+  <div class="ov__bg" data-ov-close></div>
+  <div class="ov__box">
+    <button class="ov__close" data-ov-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3 id="ovName">—</h3>
+    <div class="who" id="ovPhone">—</div>
+    <div class="field">
+      <label for="ovService">Услуга</label>
+      <select id="ovService">
+        <option>Маникюр</option><option>Педикюр</option><option>Комплекс (маникюр + педикюр)</option><option>Дизайн</option><option>Консультация</option>
+      </select>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="ovDate">Дата</label><input type="date" id="ovDate"></div>
+      <div class="field"><label for="ovTime">Время · 2 часа</label><select id="ovTime"></select></div>
+    </div>
+    <div class="field">
+      <label for="ovComment">Комментарий</label>
+      <input type="text" id="ovComment" placeholder="—">
+    </div>
+    <div class="msg" id="ovMsg"></div>
+    <div class="ov__actions">
+      <button class="btn" style="flex:1" id="ovSave">Сохранить</button>
+      <button class="btn btn--danger" id="ovCancel">Отменить запись</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD -->
+<div class="ov" id="addOv" aria-hidden="true">
+  <div class="ov__bg" data-add-close></div>
+  <div class="ov__box">
+    <button class="ov__close" data-add-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3>Новая запись</h3>
+    <div class="who">Добавить клиента вручную</div>
+    <div class="field"><label for="adName">Имя</label><input type="text" id="adName" placeholder="Имя клиента"></div>
+    <div class="field"><label for="adPhone">Телефон</label><input type="tel" id="adPhone" placeholder="+7 ..."></div>
+    <div class="field"><label for="adService">Услуга</label>
+      <select id="adService"><option>Маникюр</option><option>Педикюр</option><option>Комплекс (маникюр + педикюр)</option><option>Дизайн</option><option>Консультация</option></select>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="adDate">Дата</label><input type="date" id="adDate"></div>
+      <div class="field"><label for="adTime">Время · 2 часа</label><select id="adTime"></select></div>
+    </div>
+    <div class="field"><label for="adComment">Комментарий</label><input type="text" id="adComment" placeholder="—"></div>
+    <div class="msg" id="adMsg"></div>
+    <div class="ov__actions"><button class="btn" style="flex:1" id="adSave">Создать запись</button></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js" defer></script>
+</body>
+</html>

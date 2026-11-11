@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATELIER NÉVE — студия маникюра и педикюра в Павлодаре</title>
+<meta name="description" content="ATELIER NÉVE — студия премиального маникюра и педикюра в Павлодаре. Эстетика, стерильность и мягкий сервис. Онлайн-запись за минуту.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <span class="name serif">ATELIER&nbsp;NÉVE</span>
+      <span class="sub">студия маникюра и педикюра</span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#masters">Мастера</a></li>
+      <li><a href="#portfolio">Работы</a></li>
+      <li><a href="#about">О студии</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+      <li><a href="#" id="myBookingsLink">Мои записи</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn" data-book>Записаться</button>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__text reveal">
+        <span class="hero__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Павлодар</span>
+        <h1 class="serif">Маникюр и педикюр,<br>в который хочется возвращаться</h1>
+        <p class="lead">Эстетика, стерильность и мягкий сервис в студии премиального ухода за руками и стопами.</p>
+        <div class="hero__cta">
+          <button class="btn btn--lg" data-book>Записаться</button>
+          <a href="#services" class="btn btn--ghost btn--lg">Посмотреть услуги</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hstat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></span><b>4.9 ★</b><span>рейтинг студии</span></div>
+          <div class="hstat reveal d1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><b>с 2019 года</b><span>заботимся о вас</span></div>
+          <div class="hstat reveal d2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>стерильные</b><span>инструменты</span></div>
+          <div class="hstat reveal d3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="3.2"/><path d="M22 20v-2a4 4 0 0 0-3-3.8"/><path d="M16 3.5a4 4 0 0 1 0 7"/></svg></span><b>2000+</b><span>постоянных клиентов</span></div>
+        </div>
+      </div>
+      <div class="hero__media reveal d1">
+        <img src="images/hero.jpg" alt="Маникюр в студии ATELIER NÉVE">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services__head reveal">
+      <span class="eyebrow">Услуги</span>
+      <h2 class="h-sec">Идеальные руки и стопы<br>для вашего ритма жизни</h2>
+    </div>
+    <div class="services__grid">
+      <div class="svc-cards">
+        <article class="svc-card reveal">
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="6" rx="2"/><path d="M9 9v9a3 3 0 0 0 6 0V9"/><path d="M12 13v4"/></svg></div>
+          <h3>Маникюр</h3>
+          <p>Классический, аппаратный или комбинированный маникюр с идеальным покрытием.</p>
+          <div class="price">от 5 000 ₸</div>
+        </article>
+        <article class="svc-card reveal d1">
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c0-4 2-7 7-7s7 3 7 7c0 2-2 3-4 3H9c-2 0-4-1-4-3z"/><path d="M8 9V6M12 9V5M16 9V7"/></svg></div>
+          <h3>Педикюр</h3>
+          <p>Аппаратный педикюр с заботой о комфорте и безупречной гладкостью.</p>
+          <div class="price">от 7 000 ₸</div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 2 5 0 7-2-2-2-4 0-7z"/><path d="M5 12c3-1 5 0 6 2-3 1-5 0-6-2z"/><path d="M19 12c-3-1-5 0-6 2 3 1 5 0 6-2z"/><path d="M12 13v8"/></svg></div>
+          <h3>Комплексы</h3>
+          <p>Выгодные комбо-услуги для рук и стоп с покрытием и уходом премиум-класса.</p>
+          <div class="price">от 11 000 ₸</div>
+        </article>
+        <article class="svc-card reveal d1">
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2z"/></svg></div>
+          <h3>Дизайн</h3>
+          <p>Авторский дизайн любой сложности и индивидуальный подход к каждому образу.</p>
+          <div class="price">от 1 000 ₸</div>
+        </article>
+      </div>
+      <div class="services__media reveal d1">
+        <img src="images/studio.jpg" alt="Интерьер студии ATELIER NÉVE">
+      </div>
+    </div>
+
+    <div class="featbar reveal">
+      <div class="f"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9 6c3-3 8-3 9 0 0 0-5-1-7 2 3 0 5 2 5 5"/><path d="M11 20c0-5 2-9 7-11"/></svg></span><span>одноразовые<br>расходники</span></div>
+      <div class="f"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 4 6 10a6 6 0 0 1-12 0c0-6 6-10 6-10z"/></svg></span><span>бережные<br>материалы</span></div>
+      <div class="f"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><span>мастера<br>с опытом</span></div>
+      <div class="f"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2"/><path d="M8 3v2M12 3v2"/></svg></span><span>чай / кофе /<br>тишина</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTERS -->
+<section class="masters" id="masters">
+  <div class="container">
+    <div class="services__head reveal" style="text-align:center;max-width:620px;margin:0 auto 46px">
+      <span class="eyebrow center">Мастера</span>
+      <h2 class="h-sec">Руки, которым доверяют</h2>
+    </div>
+    <div class="masters__grid">
+      <article class="master reveal">
+        <div class="master__photo"><img src="images/master1.jpg" alt="Мастер Айгерим"><span class="master__exp">8 лет опыта</span></div>
+        <div class="master__body">
+          <h3>Айгерим</h3>
+          <p class="role">Ведущий мастер · маникюр</p>
+          <p class="desc">Аккуратная архитектура ногтя и стойкое покрытие, которое держится до 4 недель.</p>
+          <button class="btn btn--block" data-book>Записаться к мастеру</button>
+        </div>
+      </article>
+      <article class="master reveal d1">
+        <div class="master__photo"><img src="images/master2.jpg" alt="Мастер Динара"><span class="master__exp">6 лет опыта</span></div>
+        <div class="master__body">
+          <h3>Динара</h3>
+          <p class="role">Мастер педикюра</p>
+          <p class="desc">Аппаратный педикюр и бережный уход за стопами с идеальной гладкостью.</p>
+          <button class="btn btn--block" data-book>Записаться к мастеру</button>
+        </div>
+      </article>
+      <article class="master reveal d2">
+        <div class="master__photo"><img src="images/master3.jpg" alt="Мастер Виктория"><span class="master__exp">5 лет опыта</span></div>
+        <div class="master__body">
+          <h3>Виктория</h3>
+          <p class="role">Топ-мастер · дизайн</p>
+          <p class="desc">Авторский дизайн любой сложности — от нежного минимализма до сложных техник.</p>
+          <button class="btn btn--block" data-book>Записаться к мастеру</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="services__head reveal" style="text-align:center;max-width:620px;margin:0 auto 42px">
+      <span class="eyebrow center">Портфолио</span>
+      <h2 class="h-sec">Наши работы</h2>
+    </div>
+    <div class="masonry" id="masonry">
+      <button class="masonry__item reveal" data-full="images/work1.jpg" aria-label="Открыть фото"><img src="images/work1.jpg" alt="Маникюр — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work2.jpg" aria-label="Открыть фото"><img src="images/work2.jpg" alt="Маникюр — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work3.jpg" aria-label="Открыть фото"><img src="images/work3.jpg" alt="Дизайн ногтей — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work4.jpg" aria-label="Открыть фото"><img src="images/work4.jpg" alt="Дизайн ногтей — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work5.jpg" aria-label="Открыть фото"><img src="images/work5.jpg" alt="Маникюр — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work6.jpg" aria-label="Открыть фото"><img src="images/work6.jpg" alt="Маникюр — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work7.jpg" aria-label="Открыть фото"><img src="images/work7.jpg" alt="Дизайн ногтей — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+      <button class="masonry__item reveal" data-full="images/work8.jpg" aria-label="Открыть фото"><img src="images/work8.jpg" alt="Маникюр — работа студии" loading="lazy"><span class="masonry__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / REVIEWS / CONTACTS -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__left">
+        <span class="eyebrow reveal">О студии</span>
+        <p class="about__lead reveal">Мы создаём спокойный ритуал ухода, где важны форма, чистота и ощущение заботы.</p>
+        <div class="rating reveal d1">
+          <span class="score serif">4.9</span>
+          <div><div class="stars">★★★★★</div><div class="src">на 2ГИС</div></div>
+        </div>
+        <div class="reviews reveal d1" id="reviews">
+          <div class="review">
+            <p>«Всегда идеальный результат и атмосфера полного спокойствия. Люблю это место!»</p>
+            <div class="who"><img src="images/av1.jpg" alt=""><div><b>Анна</b><small>Павлодар</small></div></div>
+          </div>
+          <div class="review">
+            <p>«Очень чисто, аккуратно и невероятно уютно. Педикюр как релакс на 100%.»</p>
+            <div class="who"><img src="images/av2.jpg" alt=""><div><b>Мария</b><small>Павлодар</small></div></div>
+          </div>
+          <div class="review">
+            <p>«Мастера настоящие профессионалы, дизайн держится идеально долго.»</p>
+            <div class="who"><img src="images/av3.jpg" alt=""><div><b>Екатерина</b><small>Павлодар</small></div></div>
+          </div>
+        </div>
+        <div class="about__more reveal d2"><a href="#reviews" class="link-u">Читать больше отзывов <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+
+      <aside class="cta-card reveal d1" id="contacts">
+        <h3>Ждём вас</h3>
+        <ul class="cta-list">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div class="t"><b>г. Павлодар, ул. Кутузова, 204</b></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></span><div class="t"><b><a href="tel:+77474711659">+7 747 471 16 59</a></b></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><div class="t"><b><a href="#">@atelier.neve</a></b></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="t"><b>Ежедневно 10:00 – 22:00</b></div></li>
+        </ul>
+        <button class="btn btn--block btn--lg" data-book>Выбрать время</button>
+        <div class="note">Онлайн-запись за 1 минуту</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <a href="#top" class="logo"><span class="name serif">ATELIER&nbsp;NÉVE</span><span class="sub">студия маникюра и педикюра</span></a>
+      <nav class="foot__nav">
+        <a href="#services">Услуги</a>
+        <a href="#about">О студии</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#" data-book>Записаться</a>
+      </nav>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 ATELIER NÉVE. Студия маникюра и педикюра, Павлодар.</span>
+      <span>г. Павлодар, ул. Кутузова, 204</span>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-label="Запись в студию">
+    <button class="modal__close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <span class="eyebrow">Онлайн-запись</span>
+    <h3 class="serif">Запишитесь онлайн — выберите удобное время</h3>
+    <form id="bookForm">
+      <div class="field">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+      </div>
+      <div class="field">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      <div class="field">
+        <label for="service">Услуга</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Выберите услугу</option>
+          <option value="Маникюр">Маникюр</option>
+          <option value="Педикюр">Педикюр</option>
+          <option value="Комплекс (маникюр + педикюр)">Комплекс (маникюр + педикюр)</option>
+          <option value="Дизайн">Дизайн</option>
+          <option value="Консультация">Консультация</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bdate">Дата</label>
+          <input type="date" id="bdate" name="bdate" required>
+        </div>
+        <div class="field">
+          <label for="btime">Время · 2 часа</label>
+          <select id="btime" name="btime" required>
+            <option value="" disabled selected>Выберите дату</option>
+          </select>
+        </div>
+      </div>
+      <div class="slot-hint" id="slotHint"></div>
+      <div class="field">
+        <label for="comment">Комментарий</label>
+        <textarea id="comment" name="comment" placeholder="Пожелания к записи (необязательно)"></textarea>
+      </div>
+      <button type="submit" class="btn btn--block btn--lg" id="bookSubmit">Записаться</button>
+
+      <!-- Шаг подтверждения номера по SMS (появляется только при первой записи с устройства) -->
+      <div class="sms-step" id="smsStep" hidden>
+        <p class="sms-step__lead">Мы отправили код подтверждения на <b id="smsPhone"></b>. Введите его, чтобы завершить запись.</p>
+        <div class="field">
+          <label for="smsCode">Код из SMS</label>
+          <input type="text" id="smsCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="______">
+        </div>
+        <div class="slot-hint" id="smsMsg"></div>
+        <div class="sms-step__actions">
+          <button type="button" class="btn btn--block" id="smsConfirm">Подтвердить и записаться</button>
+          <button type="button" class="sms-step__link" id="smsResend" hidden>Отправить код ещё раз</button>
+        </div>
+      </div>
+      <div id="recaptcha-container"></div>
+
+      <div class="modal__note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Не передаём данные третьим лицам — используем только для связи с вами.
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MY BOOKINGS -->
+<div class="modal" id="myModal" aria-hidden="true">
+  <div class="modal__bg" data-my-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-label="Мои записи">
+    <button class="modal__close" data-my-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <span class="eyebrow">Мои записи</span>
+    <h3 class="serif">Ваши визиты</h3>
+    <div id="myList"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__bg" data-lb-close></div>
+  <button class="lightbox__btn lightbox__close" data-lb-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lightbox__btn lightbox__prev" data-lb-prev aria-label="Назад">&#8249;</button>
+  <figure class="lightbox__stage"><img class="lightbox__img" id="lbImg" src="" alt="Работа студии"></figure>
+  <button class="lightbox__btn lightbox__next" data-lb-next aria-label="Вперёд">&#8250;</button>
+  <div class="lightbox__count" id="lbCount"></div>
+</div>
+
+<div class="toast" id="toast">Открываем WhatsApp — <b>отправьте заявку в чате ✦</b></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/script.js" defer></script>
+<script src="js/booking.js" defer></script>
+</body>
+</html>
